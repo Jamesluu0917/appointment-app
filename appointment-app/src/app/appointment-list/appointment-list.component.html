@@ -1,21 +1,45 @@
-<div>
-  <input
-    [(ngModel)]="newAppointmentTitle"
-    placeholder="Appointment description"
-  />
-  <input
-    [(ngModel)]="newAppointmentDate"
-    type="date"
-    placeholder="Appointment date"
-  />
-  <button (click)="addAppointment()">Add</button>
-</div>
+<div class="container">
+  <div class="card mt-3 p-3">
+    <div class="row">
+      <div class="col">
+        <h2 class="text-center mt-3">Create new appointment</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 mt-3">
+        <input
+          class="form-control"
+          [(ngModel)]="newAppointmentTitle"
+          placeholder="Appointment description"
+        />
+      </div>
+      <div class="col-md-4 mt-3 mb-3">
+        <input
+          class="form-control"
+          [(ngModel)]="newAppointmentDate"
+          type="date"
+          placeholder="Appointment date"
+        />
+      </div>
+      <div class="col-md-2 mt-3 mb-3">
+        <button class="btn btn-primary w-100" (click)="addAppointment()">
+          Add
+        </button>
+      </div>
+    </div>
+  </div>
 
-<ul>
-  <!-- for loop to display each appointment in the array appointments -->
-  <li *ngFor="let appointment of appointments; index as i">
-    {{ appointment.title }}
-    {{ appointment.date }}
-    <button (click)="deleteAppointment(i)">Delete</button>
-  </li>
-</ul>
+  <h2 class="text-center mt-5">Appointments</h2>
+  <ul class="list-group mt-3">
+    <!-- for loop to display each appointment in the array appointments -->
+    <li
+      class="list-group-item d-flex justify-content-between align-items-center"
+      *ngFor="let appointment of appointments; index as i"
+    >
+      {{ appointment.title }} | {{ appointment.date }}
+      <button class="btn btn-danger" (click)="deleteAppointment(i)">
+        Delete
+      </button>
+    </li>
+  </ul>
+</div>

@@ -10,3 +10,11 @@
   />
   <button (click)="addAppointment()">Add</button>
 </div>
+
+<ul>
+  <!-- for loop to display each appointment in the array appointments -->
+  <li *ngFor="let appointment of appointments">
+    {{ appointment.title }}
+    {{ appointment.date }}
+  </li>
+</ul>

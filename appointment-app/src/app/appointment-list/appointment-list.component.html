@@ -13,8 +13,9 @@
 
 <ul>
   <!-- for loop to display each appointment in the array appointments -->
-  <li *ngFor="let appointment of appointments">
+  <li *ngFor="let appointment of appointments; index as i">
     {{ appointment.title }}
     {{ appointment.date }}
+    <button (click)="deleteAppointment(i)">Delete</button>
   </li>
 </ul>

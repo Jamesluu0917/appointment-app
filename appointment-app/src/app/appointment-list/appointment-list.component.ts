@@ -28,4 +28,9 @@ export class AppointmentListComponent {
       alert(this.appointments.length);
     }
   }
+
+  deleteAppointment(index: number) {
+    // remove 1 element starting from the array index
+    this.appointments.splice(index, 1);
+  }
 }
